@@ -1,5 +1,5 @@
 package privateStaticMethodOfInterface;
-
+//form java 9 can user private methods in interface.
 public interface PrivateMethodDoor {
     default void foo(){
         System.out.println("default foo");
