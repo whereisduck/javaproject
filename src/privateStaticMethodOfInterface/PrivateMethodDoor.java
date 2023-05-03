@@ -13,7 +13,7 @@ public interface PrivateMethodDoor {
         //privateBuz();
 
     }
-    public void fooWithPrivateMethod();
+    void fooWithPrivateMethod();
     static void staticBuz(){
         System.out.println("public static buz from door interface");
 
