@@ -1,4 +1,4 @@
-//The streams operations can be further classified as:
+package stream;//The streams operations can be further classified as:
 //filtering
 //slicing
 //mapping
@@ -72,7 +72,7 @@ class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "stream.Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
