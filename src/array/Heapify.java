@@ -4,54 +4,55 @@ import java.util.Arrays;
 
 public class Heapify {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
+
+
+        int arr[] = {1, 4, 7, 12, 15, 14, 9, 2, 3, 16};
+        //int node = arr.length / 2 - 1;
+        int N= arr.length ;
+        for (int i = (N / 2) - 1; i >=0; i--){
+        new Heapify().maxHeapipy(arr, i, N);}
+        System.out.println(Arrays.toString(arr));
+
+    }
 
 
 
 
-    int[] arr = {1, 4, 7, 12, 15, 14, 9, 2, 3, 16 };
-    int node = (arr.length-1) / 2;
-    new Heapify().maxHeapipy(arr, node);
-    System.out.println(Arrays.toString(arr));
-
-  }
 
 
 
+    public void maxHeapipy(int arr[], int node, int N)
+    {
+        //if (arr !=null && arr !=[]){
 
-        public void maxHeapipy (int[] arr, int node){
-            //if (arr !=null && arr !=[]){
 
-            if (node<0){
-                return;
-            }
+        //while(node <= arr.length / 2 -1)  {
 
             //int index = node;
 
-                int left = 2 * node + 1;
-                int right = 2 * node + 2;
-                int heapSize = arr.length;
-                if (left < heapSize && arr[left] > arr[node]) {
-                    int temp = arr[left];
-                    arr[left] = arr[node];
-                    arr[node] = temp;
-                }
-                if (right < heapSize && arr[right] > arr[node]) {
-                    int temp = arr[right];
-                    arr[right] = arr[node];
-                    arr[node] = temp;
-                }
-                maxHeapipy(arr, node - 1);
+            int left = 2 * node + 1;
+            int right = 2 * node + 2;
+            int large = node;
+            //int heapSize = arr.length;
+            if (left < N && arr[left] > arr[large]) {
+                large = left;
 
-
-
-
-
+            }
+            if (right < N && arr[right] > arr[large]) {
+                large = right;
+            }
+            if (large != node) {
+                int temp = arr[node];
+                arr[node] = arr[large];
+                arr[large] = temp;
+                //node = largest;
+                maxHeapipy(arr, large, N);
+            }
 
         }
 
-
-
+    
 }
 /*
 Before heapify: [1, 4, 7, 12, 15, 14, 9, 2, 3, 16]
